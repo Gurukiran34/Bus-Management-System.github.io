@@ -1,0 +1,128 @@
+<div class="mx-auto py-3" style="width: 55%;">
+  <form class="card px-3 py-3 bg-light border border-3 border-dark">
+    <fieldset>
+        <div class="text-center" id="legend">
+            <legend class="fw-bold">Register</legend>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="username">Username</label>
+            <div class="controls">
+                <input type="text" id="username" name="username" placeholder="Enter Username" class="input-xlarge"
+                    #userName>
+                <p class="help-block">Username can contain any letters, numbers or symbols(_, &#64;, $ only)</p>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input type="password" id="password" name="password" placeholder="Enter Password" class="input-xlarge"
+                    #password>
+                <p class="help-block">Password should be atleast 8 characters</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <label class="control-label" for="password_confirm">Confirm Password</label>
+            <div class="controls">
+                <input type="password" id="password_confirm" name="password_confirm" placeholder="Re-enter Password"
+                    class="input-xlarge" #repassword>
+                <p class="help-block">Please confirm password</p>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="control-label" for="email">E-mail</label>
+            <div class="controls">
+                <input type="email" id="email" name="email" placeholder="Enter E-mail" class="input-xlarge" #email>
+                <p class="help-block">Please provide your E-mail</p>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="control-label" for="password_confirm">Date of Birth</label>
+            <div class="controls">
+                <input type="date" id="dob" name="dob"
+                    class="input-xlarge" #dob>
+                <p class="help-block">Choose Date of Birth from Calendar</p>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="control-label" for="password_confirm">About</label>
+            <div class="controls">
+                <textarea rows="5" style="width:100%;" id="about" name="about" placeholder="Enter Something About You"
+                    class="input-xlarge" #about></textarea>
+                <p class="help-block">About You</p>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <div class="controls">
+                <button class="btn btn-success" type="submit"
+                    (click)="saveUser(userName.value, dob.value, email.value, password.value, repassword.value, about.value)">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+</div>
+
+
+
+
+
+<!--
+
+<form class="form-horizontal" action='' method="POST">
+    <fieldset>
+      <div id="legend">
+        <legend class="">Register</legend>
+      </div>
+      <div class="control-group">
+
+        <label class="control-label"  for="username">Username</label>
+        <div class="controls">
+          <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+          <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+        </div>
+      </div>
+   
+      <div class="control-group">
+      
+        <label class="control-label" for="email">E-mail</label>
+        <div class="controls">
+          <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+          <p class="help-block">Please provide your E-mail</p>
+        </div>
+      </div>
+   
+      <div class="control-group">
+      
+        <label class="control-label" for="password">Password</label>
+        <div class="controls">
+          <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+          <p class="help-block">Password should be at least 4 characters</p>
+        </div>
+      </div>
+   
+      <div class="control-group">
+       
+        <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+        <div class="controls">
+          <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+          <p class="help-block">Please confirm password</p>
+        </div>
+      </div>
+   
+      <div class="control-group">
+   
+        <div class="controls">
+          <button class="btn btn-success">Register</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  -->

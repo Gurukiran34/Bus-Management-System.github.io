@@ -1,0 +1,54 @@
+<h1 class="bg-light text-center border border-3 border-secondary rounded"> Bus List </h1>
+<table class="table table-striped border border-3 border-dark">
+    <tr>
+        <td>
+            <div class="input-group">
+                <input type="text" class="form-control" id="busAgencyLike" placeholder="Search by Agency" #busAgencyLike/>
+                <div class="input-group-append px-3">
+                    <button class="btn btn-success" type="button" id="searchButton" (click)="getBusesLike(busAgencyLike.value)">
+                        <!--i class="fa-solid fa-magnifying-glass fa-beat">Search</i-->Search
+                    </button>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sort </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="getBusesAsc()"> Ascending <!--i class="fa-solid fa-arrow-up-wide-short fa-beat"></i--></a>
+                    <a class="dropdown-item" (click)="getBusesDsc()">Descending <!--i class="fa-solid fa-arrow-down-wide-short fa-beat"></i--></a>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<table class="table table-striped border border-3 border-dark">
+    <thead>
+        <tr>
+            <th> Bus Number </th>
+            <th> Bus Agency </th>
+            <th> Source </th>
+            <th> Destination </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bus of buses | paginate: { itemsPerPage: count, currentPage: p }">
+            <td> {{ bus.busNumber }} </td>
+            <td> {{ bus.busAgency }} </td>
+            <td> {{ bus.sourceStation }} </td>
+            <td> {{ bus.destinationStation }} </td>
+            <td>
+                <button (click)="updateBus(bus.busNumber)" class="btn btn-secondary"
+                    *ngIf="userService.isUserLoggedIn()"> Update</button>
+                <button (click)="deleteBus(bus.busNumber)" class="btn btn-danger" style="margin-left: 10px"
+                    *ngIf="userService.isUserLoggedIn()"> Delete</button>
+                <button (click)="viewBus(bus.busNumber)" class="btn btn-info" style="margin-left: 10px"
+                    *ngIf="userService.isUserLoggedIn()"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="pagination" style="color: #021938;">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

@@ -1,0 +1,167 @@
+<nav class="navbar navbar-expand-sm bg-secondary navbar-dark ">
+  <div class="container justify-content-between">
+    <h1 class="navbar-brand border border-5 border-warning p-2"> {{title}} </h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a routerLink="home" routerLinkActive="active" class="nav-link" >Home</a>
+      </li>
+      <li class="nav-item active">
+        <a routerLink="buses" routerLinkActive="active" class="nav-link" *ngIf="userService.isUserLoggedIn()">Bus List</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add-bus" routerLinkActive="active" class="nav-link" *ngIf="userService.isUserLoggedIn()">Add Bus</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="sign-up" routerLinkActive="active" class="nav-link" *ngIf="!userService.isUserLoggedIn()">SignUp</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="sign-in" routerLinkActive="active" class="nav-link"
+          *ngIf="!userService.isUserLoggedIn()">SignIn</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="sign-out" routerLinkActive="active" class="nav-link"
+          *ngIf="userService.isUserLoggedIn()">SignOut</a>
+      </li>
+      <!-- <li class="nav-item">
+        <form class="form-horizontal" *ngIf="userService.isUserLoggedIn()">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-info my-2 my-sm-2" type="submit"> Search </button>
+        </form>
+      </li> -->
+    </ul>
+
+  </div>
+</nav>
+
+
+
+<div class="container-fluid col-lg-10 p-5">
+  <router-outlet></router-outlet>
+  <app-home></app-home>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-secondary text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Connect with us:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-lg-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Gurus Bus Service
+          </h6>
+          <p>
+            Making your journeys comfortable and safe.<br>
+            Safety and punctuality are our top priorities.<br>
+            We've been doing this for 40 years now!
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Top Routes
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pune to Banglore</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Mumbai to Pune</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Delhi to Jaipur</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Chennai to Hyderabad</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Admin Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Status</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Bookings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Bhopal, MP 462001, IND</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info&#64;gurusbus.in
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4 sticky-bottom" style="background-color: rgba(0, 0, 0, 0.05);">
+    <a class="text-reset fw-bold" href="http://localhost:4200/sign-up">All Rights Reserved 2023 &#64;GurusBusService</a>
+  </div>
+  <!-- Copyright -->
+</footer>

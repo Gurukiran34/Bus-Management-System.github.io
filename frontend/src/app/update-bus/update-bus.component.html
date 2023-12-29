@@ -1,0 +1,61 @@
+<div class="mx-auto py-3" style="width: 50%;">
+    <form class="card border border-3 border-dark p-3" (ngSubmit)="onSubmit()">
+
+        <div class="text-center" id="legend">
+            <legend class="fw-bold"> Update Bus </legend>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label p-5" for="busNumber"> Bus Number </label>
+            <input type="text" class="controls" id="busNumber" [(ngModel)]="bus.busNumber" name="busNumber" disabled="true">
+        </div>
+
+        <div class="form-group">
+            <label for="busAgency"> Bus Agency </label>
+            <input type="text" class="form-control" id="busAgency" [(ngModel)]="bus.busAgency"
+                name="busAgency">
+        </div>
+
+        <div class="form-group">
+            <label for="sourceStation"> Source </label>
+            <input type="text" class="form-control" id="sourceStation" [(ngModel)]="bus.sourceStation"
+                name="sourceStation">
+        </div>
+
+        <div class="form-group">
+            <label for="destinationStation"> Destination </label>
+            <input type="text" class="form-control" id="destinationStation" [(ngModel)]="bus.destinationStation"
+                name="destinationStation">
+        </div>
+
+        <div class="form-group">
+            <label for="seatingCapacity"> Seating Capacity</label>
+            <input type="number" class="form-control" id="seatingCapacity" [(ngModel)]="bus.seatingCapacity"
+                name="seatingCapacity">
+        </div>
+
+        <div class="form-group">
+            <label for="standingCapacity"> Standing Capacity</label>
+            <input type="number" class="form-control" id="standingCapacity" [(ngModel)]="bus.standingCapacity"
+                name="standingCapacity">
+        </div>
+
+        <div class="form-group">
+            <label> Available </label>
+            <div class="form-control">
+                <label class="radio-inline" style="margin-right: 25px;">
+                    <input type="radio" name="isAvailable" [(ngModel)]="bus.isAvailable" value="true">
+                    Yes
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="isAvailable" [(ngModel)]="bus.isAvailable" value="false">
+                    No
+                </label>
+            </div>
+        </div>
+        <br>
+        <div class="form-group controls text-center py-3">
+            <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
